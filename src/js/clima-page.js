@@ -10,11 +10,12 @@ const ulList = document.querySelector(".ul-list");
 const button = document.querySelector("#button-addon1");
 const textBox = document.querySelector("#textBox");
 const kelvin = 273.15;
+const date = new Date();
 
 const crearHmlt = ({ main, name, sys, weather }) => {
   const html = `<li>
-    <p class="fs-5">Tiempo actual</p>
-    <p class="fs-4">19:30</p>
+    <p class="fs-5">Hora actual</p>
+    <p class="fs-4">${date.getHours()}:${date.getMinutes()}</p>
     <img src='${icono}/${weather[0].icon}@2x.png'/>
     <p class="fs-1">${parseFloat(main.temp - kelvin, 10).toFixed(2)}&#x2103</p>
     <p class="fs-4">${sys.country}</p>
